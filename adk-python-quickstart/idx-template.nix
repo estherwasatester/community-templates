@@ -4,10 +4,8 @@
   ];
   bootstrap = ''
     mkdir -p "$out"
-    cp -r ${./.}/* "$out"
-    mkdir "$out/.idx"
-    cp -rf ${./.}/.idx "$out"
+    cp -rf ${./.} "$out"
     chmod -R u+w "$out"
-    rm -rf "$out/.git" "$out/idx-template.json" "$out/idx-template.nix"
+    rm -rf "$out/.git" "$out/idx-template".{nix,json}
   '';
 }
